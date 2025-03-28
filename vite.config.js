@@ -6,7 +6,7 @@ export default defineConfig({
         host: 'localhost',
         cors: true,
         // yoki aniq ruxsatlar
-        origin: 'http://localhost:8040',
+        origin: 'http://localhost:8060',
         port: 8040,
         hmr: {
             host: 'localhost',
