@@ -6,18 +6,15 @@ namespace App\MoonShine\Resources;
 
 
 use App\Models\Product;
-
-
+use MoonShine\Contracts\UI\ComponentContract;
+use MoonShine\Contracts\UI\FieldContract;
 use MoonShine\Laravel\Fields\Relationships\BelongsTo;
 use MoonShine\Laravel\Resources\ModelResource;
-use MoonShine\TinyMce\Fields\TinyMce;
-use MoonShine\UI\Components\Layout\Box;
 use MoonShine\UI\Fields\ID;
-use MoonShine\Contracts\UI\FieldContract;
-use MoonShine\Contracts\UI\ComponentContract;
 use MoonShine\UI\Fields\Number;
 use MoonShine\UI\Fields\Text;
 use MoonShine\UI\Fields\Textarea;
+
 
 /**
  * @extends ModelResource<Product>
@@ -38,17 +35,17 @@ class ProductResource extends ModelResource
             Text::make('Name')->sortable(),
             Textarea::make('Description')
                 ->customAttributes([
-                'rows'=>7,
-            ]),
+                    'rows' => 7,
+                ]),
             Text::make('Price')->sortable(),
-            Text::make('Sale Price','sale_price')->sortable(),
+            Text::make('Sale Price', 'sale_price')->sortable(),
             BelongsTo::make(
                 'Category ID and Name',
                 'category',
-                fn($item)=>"$item->name",
+                fn($item) => "$item->name",
                 CategoryResource::class)->nullable(),
-            Number::make('Quantity', 'quantity'),
-            Number::make('Pilgrim','pilgrim'),
+            Number::make('Quantity', 'stock_quantity'),
+            Number::make('Pilgrim', 'pilgrim'),
             BelongsTo::make('Volume', 'volume', fn($item) => $item->name,
                 VolumeResource::class
             )->nullable(),
@@ -66,17 +63,17 @@ class ProductResource extends ModelResource
             Text::make('Name')->sortable(),
             Textarea::make('Description')
                 ->customAttributes([
-                    'rows'=>7,
+                    'rows' => 7,
                 ]),
             Text::make('price')->sortable(),
-            Text::make('Sale Price','sale_price')->sortable(),
+            Text::make('Sale Price', 'sale_price')->sortable(),
             BelongsTo::make(
                 'Category ID and Name',
                 'category',
-                fn($item)=>"$item->name",
+                fn($item) => "$item->name",
                 CategoryResource::class)->nullable(),
-            Number::make('Quantity', 'quantity'),
-            Number::make('Pilgrim','pilgrim'),
+            Number::make('Quantity', 'stock_quantity'),
+            Number::make('Pilgrim', 'pilgrim'),
             BelongsTo::make('Volume', 'volume', fn($item) => $item->name,
                 VolumeResource::class
             )->nullable(),
@@ -93,17 +90,17 @@ class ProductResource extends ModelResource
             Text::make('Name')->sortable(),
             Textarea::make('Description')
                 ->customAttributes([
-                    'rows'=>7,
+                    'rows' => 7,
                 ]),
             Text::make('Price')->sortable(),
-            Text::make('Sale Price','sale_price')->sortable(),
+            Text::make('Sale Price', 'sale_price')->sortable(),
             BelongsTo::make(
                 'Category ID and Name',
                 'category',
-                fn($item)=>"$item->name",
+                fn($item) => "$item->name",
                 CategoryResource::class)->nullable(),
-            Number::make('Quantity', 'quantity'),
-            Number::make('Pilgrim','pilgrim'),
+            Number::make('Quantity', 'stock_quantity'),
+            Number::make('Pilgrim', 'pilgrim'),
             BelongsTo::make('Volume', 'volume', fn($item) => $item->name,
                 VolumeResource::class
             )->nullable(),
