@@ -3,6 +3,10 @@ import laravel from 'laravel-vite-plugin';
 
 export default defineConfig({
     server: {
+        watch: {
+            usePolling: true,
+            interval: 1000, // 1 sekundda bir tekshiradi
+        },
         host: 'localhost',
         cors: true,
         // yoki aniq ruxsatlar
